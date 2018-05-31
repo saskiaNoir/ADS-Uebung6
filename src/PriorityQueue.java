@@ -15,14 +15,15 @@ public class PriorityQueue {
         pQueue.add(element);
     }
 
-    public void min(){
-        int minimal=0;
-        int aktKey;
+    public String min(){
+        Element minimal=pQueue.get(0);
+        Element aktKey;
         for(Element element: pQueue){
-            aktKey=element.getKey();
-            if(pQueue.get(minimal).key<aktKey){
+            aktKey=element;
+            if(minimal.key>aktKey.key){
                 minimal=aktKey;
             }
         }
+        return minimal.element;
     }
 }
