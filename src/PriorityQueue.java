@@ -20,9 +20,9 @@ public class PriorityQueue {
         int aktKey;
         for(Element element: pQueue){
             aktKey=element.getKey();
-            if(minimal<aktKey){
+            if(pQueue.get(minimal).key<aktKey){
                 minimal=aktKey;
-            };
+            }
         }
     }
 }
