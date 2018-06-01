@@ -3,8 +3,9 @@
 import java.util.LinkedList;
 
 
-public class PriorityQueue {
+public class PriorityQueue <T extends Element>{
     LinkedList<Element> pQueue;
+    Element minElement;
 
 
     public PriorityQueue(){
@@ -24,6 +25,22 @@ public class PriorityQueue {
                 minimal=aktKey;
             }
         }
-        return minimal.element;
+        minElement=minimal;
+        return minimal.content;
+    }
+
+    public void getMin(){
+        min();
+        pQueue.remove(minElement);
+        System.out.println(pQueue.size());
+
+    }
+
+    public void replaceMin(Element x){
+        min();
+      int index=  pQueue.indexOf(minElement);
+        pQueue.set(index,x);
+        minElement=null;
+        System.out.println(pQueue.get(index).content);
     }
 }

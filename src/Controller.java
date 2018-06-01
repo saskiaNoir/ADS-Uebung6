@@ -13,7 +13,9 @@ public class Controller {
      //       System.out.println(element);
         }
 
-       System.out.println("Das Element mit der höchsten Priorität ist:  "+pQueue.min());
+   //    System.out.println("Das Element mit der höchsten Priorität ist:  "+pQueue.min());
+   //     pQueue.replaceMin(new Element("bla"));
+   //     pQueue.getMin();
 
 
 

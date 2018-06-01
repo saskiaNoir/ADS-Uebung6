@@ -1,12 +1,12 @@
-public class Element {
+public class Element  {
 
     int key;
-    String element;
+    String content;
 
 
-    public Element(String element){
-        this.element=element;
-        key=element.length();
+    public Element(String content){
+        this.content=content;
+        key=content.length();
     }
 
     public int getKey(){
