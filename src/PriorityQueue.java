@@ -6,6 +6,7 @@ import java.util.LinkedList;
 public class PriorityQueue <T extends Element>{
     LinkedList<Element> pQueue;
     Element minElement;
+    Element zwischenspeicher;
 
 
     public PriorityQueue(){
@@ -30,9 +31,10 @@ public class PriorityQueue <T extends Element>{
     }
 
     public void getMin(){
-        min();
+
+        zwischenspeicher=minElement;
         pQueue.remove(minElement);
-        System.out.println(pQueue.size());
+
 
     }
 
@@ -42,5 +44,9 @@ public class PriorityQueue <T extends Element>{
         pQueue.set(index,x);
         minElement=null;
         System.out.println(pQueue.get(index).content);
+    }
+
+    public int length(){
+        return pQueue.size();
     }
 }

@@ -1,6 +1,5 @@
 import de.medieninf.ads.ADSTool;
 
-import java.util.Scanner;
 
 public class Controller {
     public static void main(String []args) {
@@ -10,12 +9,19 @@ public class Controller {
         for (String element :array){
             i++;
             pQueue.insert(new Element(element));
-     //       System.out.println(element);
+    //       System.out.println(element);
         }
 
-   //    System.out.println("Das Element mit der höchsten Priorität ist:  "+pQueue.min());
-   //     pQueue.replaceMin(new Element("bla"));
-   //     pQueue.getMin();
+
+        for(int j=0;j<pQueue.length();i++){
+
+            System.out.println(pQueue.min());
+            pQueue.getMin();
+
+
+        }
+
+
 
 
 
