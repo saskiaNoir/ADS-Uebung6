@@ -1,3 +1,4 @@
+package aufg3;
 
 public class aufg3a {
 

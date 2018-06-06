@@ -1,3 +1,4 @@
+package aufg3;
 import java.util.Scanner;
 
 public class aufg3b {

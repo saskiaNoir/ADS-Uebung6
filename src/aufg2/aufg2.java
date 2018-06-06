@@ -1,3 +1,4 @@
+package aufg2;
 import de.medieninf.ads.ADSTool;
 
 public class aufg2 {
