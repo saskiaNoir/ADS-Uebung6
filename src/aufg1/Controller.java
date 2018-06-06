@@ -2,6 +2,12 @@ package aufg1;
 
 import de.medieninf.ads.ADSTool;
 
+/**
+ * Controller
+ * 
+ * @author Saskia Schwartz, Christian Zekovic, Paul Schade
+ *
+ */
 public class Controller {
 	public static void main(String[] args) {
 

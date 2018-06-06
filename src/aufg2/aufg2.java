@@ -2,6 +2,12 @@ package aufg2;
 
 import de.medieninf.ads.ADSTool;
 
+/**
+ * aufg2
+ * 
+ * @author Saskia Schwartz, Christian Zekovic, Paul Schade
+ *
+ */
 public class aufg2 {
 	public static void main(String[] args) {
 

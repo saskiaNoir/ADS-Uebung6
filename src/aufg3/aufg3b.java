@@ -1,5 +1,11 @@
 package aufg3;
 
+/**
+ * aufg3b
+ * 
+ * @author Saskia Schwartz, Christian Zekovic, Paul Schade
+ *
+ */
 public class aufg3b {
 	public static void main(String[] args) {
 

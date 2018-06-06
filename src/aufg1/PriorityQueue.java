@@ -2,6 +2,12 @@ package aufg1;
 
 import java.util.LinkedList;
 
+/**
+ * Simple Priority Queue
+ * 
+ * @author Saskia Schwartz, Christian Zekovic, Paul Schade
+ *
+ */
 public class PriorityQueue {
 	LinkedList<Element> pQueue;
 	Element minElement;
