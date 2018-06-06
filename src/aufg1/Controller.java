@@ -6,9 +6,9 @@ public class Controller {
 	public static void main(String[] args) {
 
 		try {
-			String args1 = args[0];
+			// String args1 = args[0];
 
-			String array[] = ADSTool.readWordArray(args1);
+			String array[] = ADSTool.readWordArray("words.dat");
 			PriorityQueue pQueue = new PriorityQueue();
 
 			for (String element : array) {
