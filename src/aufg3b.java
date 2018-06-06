@@ -13,6 +13,7 @@ public class aufg3b {
         int[] arrayInt = new int[array.length];
         int[][] spielstand = new int[4][array.length];
         int x = 3;
+        int falseIndex=0;
 
         for (int i = 0; i < array.length; i++) {
             arrayInt[i] = Integer.parseInt(array[i]);
@@ -20,12 +21,37 @@ public class aufg3b {
         }
         int zahlenmenge=arrayInt.length;
 
+        System.out.println("So sieht unser Array am Anfang aus:  ");
+        for(int i=0;i<4;i++){
+            System.out.println(" ");
+            for(int j=0;j<zahlenmenge;j++){
+                System.out.print(spielstand[i][j]);
+            }
+        }
+        System.out.println("");
 
 
-        System.out.println(testGewinn(spielstand,zahlenmenge));
+
+        System.out.println(testGewinn(spielstand,zahlenmenge,falseIndex));
+        falseIndex=0;
         gegner(zahlenmenge,spielstand,arrayInt);
 
+        System.out.println("");
+        System.out.println("nach beliebigen Zug des Gegners sieht der Array so aus: ");
             for(int i=0;i<4;i++){
+           System.out.println(" ");
+            for(int j=0;j<zahlenmenge;j++){
+                System.out.print(spielstand[i][j]);
+            }
+        }
+
+
+            optimalZug(spielstand,arrayInt,zahlenmenge,falseIndex);
+            falseIndex=0;
+
+            System.out.println("");
+            System.out.println("Unser optimaler Zug: ");
+        for(int i=0;i<4;i++){
             System.out.println(" ");
             for(int j=0;j<zahlenmenge;j++){
                 System.out.print(spielstand[i][j]);
@@ -48,7 +74,7 @@ public class aufg3b {
              return befuellung;
         }
 
-        public static boolean testGewinn(int [][] spielstand,int zahlenmenge){
+        public static boolean testGewinn(int [][] spielstand,int zahlenmenge,int falseIndex){
               boolean gewinnPos=false;
               int count=0;
                 for(int i=0;i<4;i++){
@@ -63,6 +89,7 @@ public class aufg3b {
                     }
                     else{
                         gewinnPos=false;
+                        falseIndex=i;
                         return gewinnPos;
                     }
                 }
@@ -70,40 +97,58 @@ public class aufg3b {
         }
 
         public static int random(int zahlenmenge){
-         int randomZahl= (int)(Math.random()*(zahlenmenge));
+         int randomZahl= (int)(Math.random()*(zahlenmenge)+1);
 
          return randomZahl;
         }
 
         public static void gegner(int zahlenmenge,int [][] spielstand,int [] arrayInt) {
-                int stapelInt=random(zahlenmenge);
-                int stapelM=arrayInt[stapelInt];
-                  if(stapelM ==0){
+                int stapel=random(zahlenmenge);
+                int stapelM=arrayInt[stapel];
+                  if(stapelM ==0 ){
                       gegner(zahlenmenge,spielstand,arrayInt);
             }
             else {
-                 //   String [] münzenBinS;
+
 
                 int münzen= random(stapelM);
-         //     münzenBinS= Integer.toBinaryString(münzen).split("");
-                      int [] münzenBin= new int[4];
-                      münzenBin=toBinary(münzen,3);
-       //      for(int i=0;i<münzenBinS.length;i++) {
-           //      münzenBin[i]=Integer.parseInt(münzenBinS[i]);
-          //   }
+                if(münzen>stapelM){
+                    gegner(zahlenmenge,spielstand,arrayInt);
+                }
+                else {
+                    arrayInt[stapel] = stapelM - münzen;
+                    spielstand[stapel] = toBinary(arrayInt[stapel], 3);
 
-             for(int i=0; i<4; i++){
-               if((spielstand[stapelInt][i]==1) && (münzenBin[i]==1)){
-                   spielstand[stapelInt][i]=0;
-               }
-               else if((spielstand[stapelInt][i]==0) && (münzenBin[i]==1)){
-                   spielstand[stapelInt][i]=1;
-               }
-
+                }
             }
         }
 
+        public static void optimalZug(int [][] spielstand,int[]arrayInt,int zahlenmenge,int falseIndex) {
 
-}
+            if (testGewinn(spielstand, zahlenmenge,falseIndex) == true) {
+                int stapel = random(zahlenmenge);
+                if (arrayInt[stapel] >= 2) {
+                    arrayInt[stapel] = arrayInt[stapel] - 2;
+                    spielstand[stapel] = toBinary(arrayInt[stapel], 3);
+                } else {
+                    optimalZug(spielstand, arrayInt, zahlenmenge,falseIndex);
+                }
+            } else {
+
+                if (arrayInt[falseIndex] >= 1) {
+                    arrayInt[falseIndex] = arrayInt[falseIndex] - 1;
+                    spielstand[falseIndex] = toBinary(arrayInt[falseIndex], 3);
+                } else {
+                    optimalZug(spielstand, arrayInt, zahlenmenge,falseIndex);
+                }
+            }
+
+
+          }
+
+
+
+
+
 
 }
