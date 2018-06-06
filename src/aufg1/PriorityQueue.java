@@ -1,3 +1,4 @@
+package aufg1;
 
 
 import java.util.LinkedList;
