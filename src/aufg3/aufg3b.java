@@ -10,8 +10,8 @@ public class aufg3b {
 	public static void main(String[] args) {
 
 		try {
-			String eingabe = args[0];
-			// String eingabe = "7 5 3 1";
+			//String eingabe = args[0];
+			 String eingabe = "9 7 4 2 1";
 
 			String[] array = new String[eingabe.length()];
 			array = eingabe.split(" ");
