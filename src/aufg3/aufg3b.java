@@ -9,56 +9,60 @@ package aufg3;
 public class aufg3b {
 	public static void main(String[] args) {
 
-		//String eingabe = args[0];
-		 String eingabe = "7 5 3 1";
+		try {
+			String eingabe = args[0];
+			// String eingabe = "7 5 3 1";
 
-		String[] array = new String[eingabe.length()];
-		array = eingabe.split(" ");
+			String[] array = new String[eingabe.length()];
+			array = eingabe.split(" ");
 
-		int[] arrayInt = new int[array.length];
-		int[][] spielstand = new int[array.length][4];
-		int x = 3;
-		int falseIndex = 0;
+			int[] arrayInt = new int[array.length];
+			int[][] spielstand = new int[array.length][4];
+			int x = 3;
+			int falseIndex = 0;
 
-		for (int i = 0; i < array.length; i++) {
-			arrayInt[i] = Integer.parseInt(array[i]);
-			spielstand[i] = toBinary(arrayInt[i], x);
-		}
-		int zahlenmenge = arrayInt.length;
-
-		System.out.println("So sieht unser Array am Anfang aus:  ");
-		for (int i = 0; i < zahlenmenge; i++) {
-			System.out.println(" ");
-			for (int j = 0; j < 4; j++) {
-				System.out.print(spielstand[i][j]);
+			for (int i = 0; i < array.length; i++) {
+				arrayInt[i] = Integer.parseInt(array[i]);
+				spielstand[i] = toBinary(arrayInt[i], x);
 			}
-		}
-		System.out.println("");
+			int zahlenmenge = arrayInt.length;
 
-		System.out.println(testGewinn(spielstand, zahlenmenge, falseIndex));
-		falseIndex = 0;
-		gegner(zahlenmenge, spielstand, arrayInt);
-
-		System.out.println("");
-		System.out.println("nach beliebigen Zug des Gegners sieht der Array so aus: ");
-		for (int i = 0; i < zahlenmenge; i++) {
-			System.out.println(" ");
-			for (int j = 0; j < 4; j++) {
-				System.out.print(spielstand[i][j]);
+			System.out.println("So sieht unser Array am Anfang aus:  ");
+			for (int i = 0; i < zahlenmenge; i++) {
+				System.out.println(" ");
+				for (int j = 0; j < 4; j++) {
+					System.out.print(spielstand[i][j]);
+				}
 			}
-		}
-		System.out.println("");
+			System.out.println("");
 
-		optimalZug(spielstand, arrayInt, zahlenmenge, falseIndex);
-		falseIndex = 0;
+			System.out.println(testGewinn(spielstand, zahlenmenge, falseIndex));
+			falseIndex = 0;
+			gegner(zahlenmenge, spielstand, arrayInt);
 
-		System.out.println("");
-		System.out.println("Unser optimaler Zug: ");
-		for (int i = 0; i < zahlenmenge; i++) {
-			System.out.println(" ");
-			for (int j = 0; j < 4; j++) {
-				System.out.print(spielstand[i][j]);
+			System.out.println("");
+			System.out.println("nach beliebigen Zug des Gegners sieht der Array so aus: ");
+			for (int i = 0; i < zahlenmenge; i++) {
+				System.out.println(" ");
+				for (int j = 0; j < 4; j++) {
+					System.out.print(spielstand[i][j]);
+				}
 			}
+			System.out.println("");
+
+			optimalZug(spielstand, arrayInt, zahlenmenge, falseIndex);
+			falseIndex = 0;
+
+			System.out.println("");
+			System.out.println("Unser optimaler Zug: ");
+			for (int i = 0; i < zahlenmenge; i++) {
+				System.out.println(" ");
+				for (int j = 0; j < 4; j++) {
+					System.out.print(spielstand[i][j]);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 	}

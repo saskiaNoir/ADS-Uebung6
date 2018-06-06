@@ -12,7 +12,6 @@ public class aufg2 {
 	public static void main(String[] args) {
 
 		try {
-		//	String args1 = args[0];
 
 			int z1 = 0;
 			int z2 = 0;
