@@ -3,15 +3,15 @@ import java.util.Scanner;
 public class aufg3b {
     public static void main(String []args) {
 
-        //  String eingabe=args[0];
-        String eingabe = "7531";
+         String eingabe=args[0];
+      //  String eingabe = "9 8 5 2 1";
 
         String[] array = new String[eingabe.length()];
-        array = eingabe.split("");
+        array = eingabe.split(" ");
 
 
         int[] arrayInt = new int[array.length];
-        int[][] spielstand = new int[4][array.length];
+        int[][] spielstand = new int[array.length][4];
         int x = 3;
         int falseIndex=0;
 
@@ -22,9 +22,9 @@ public class aufg3b {
         int zahlenmenge=arrayInt.length;
 
         System.out.println("So sieht unser Array am Anfang aus:  ");
-        for(int i=0;i<4;i++){
+        for(int i=0;i<zahlenmenge;i++){
             System.out.println(" ");
-            for(int j=0;j<zahlenmenge;j++){
+            for(int j=0;j<4;j++){
                 System.out.print(spielstand[i][j]);
             }
         }
@@ -38,12 +38,13 @@ public class aufg3b {
 
         System.out.println("");
         System.out.println("nach beliebigen Zug des Gegners sieht der Array so aus: ");
-            for(int i=0;i<4;i++){
+            for(int i=0;i<zahlenmenge;i++){
           System.out.println(" ");
-            for(int j=0;j<zahlenmenge;j++){
+            for(int j=0;j<4;j++){
                 System.out.print(spielstand[i][j]);
             }
         }
+        System.out.println("");
 
 
             optimalZug(spielstand,arrayInt,zahlenmenge,falseIndex);
@@ -51,9 +52,9 @@ public class aufg3b {
 
             System.out.println("");
             System.out.println("Unser optimaler Zug: ");
-        for(int i=0;i<4;i++){
+        for(int i=0;i<zahlenmenge;i++){
             System.out.println(" ");
-            for(int j=0;j<zahlenmenge;j++){
+            for(int j=0;j<4;j++){
                 System.out.print(spielstand[i][j]);
             }
         }
