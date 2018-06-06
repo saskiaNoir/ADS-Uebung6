@@ -39,7 +39,7 @@ public class aufg3b {
         System.out.println("");
         System.out.println("nach beliebigen Zug des Gegners sieht der Array so aus: ");
             for(int i=0;i<4;i++){
-           System.out.println(" ");
+          System.out.println(" ");
             for(int j=0;j<zahlenmenge;j++){
                 System.out.print(spielstand[i][j]);
             }
@@ -97,7 +97,7 @@ public class aufg3b {
         }
 
         public static int random(int zahlenmenge){
-         int randomZahl= (int)(Math.random()*(zahlenmenge)+1);
+         int randomZahl= (int)(Math.random()*(zahlenmenge-1)+1);
 
          return randomZahl;
         }
