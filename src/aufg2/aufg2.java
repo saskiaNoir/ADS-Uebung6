@@ -6,7 +6,7 @@ public class aufg2 {
 	public static void main(String[] args) {
 
 		try {
-			String args1 = args[0];
+		//	String args1 = args[0];
 
 			int z1 = 0;
 			int z2 = 0;
@@ -15,7 +15,7 @@ public class aufg2 {
 			int erga = -1;
 			int ergebB = -1;
 
-			int array[] = ADSTool.readIntArray(args1);
+			int array[] = ADSTool.readIntArray("L.dat");
 			// int array2 []={2,3,5,7,11,15,20};
 
 			for (int i = array.length - 1; i > z1; i--) {
